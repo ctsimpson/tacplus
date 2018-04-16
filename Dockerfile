@@ -1,7 +1,9 @@
-FROM ubuntu:trusty
+FROM ubuntu:xenial
 MAINTAINER chrsimpson
 ADD tacacs-F4.0.4.28.tar.gz /tmp/
 ADD tac_plus.conf /etc/
+ADD do_auth.ini /etc/
+ADD do_auth.py /usr/local/sbin/
 RUN apt-get update && apt-get install -y \
 gcc \
 make \
