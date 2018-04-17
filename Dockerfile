@@ -16,6 +16,7 @@ vim \
 net-tools \
 ssh \
 wget \
+sudo \
 libproc-daemon-perl
 RUN cd /tmp/tacacs-F4.0.4.28; ./configure; make install; echo "include /etc/ld.so.conf.d/*.conf /usr/local/lib" > /etc/ld.so.conf; ldconfig
 LABEL release_notes="NetSec test release"
