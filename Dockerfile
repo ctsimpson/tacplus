@@ -14,6 +14,7 @@ net-tools \
 ssh \
 wget \
 sudo \
+inetutils-ping \
 libproc-daemon-perl
 ADD tacacs-F4.0.4.28.tar.gz /tmp/
 ADD tac_plus.conf /etc/
