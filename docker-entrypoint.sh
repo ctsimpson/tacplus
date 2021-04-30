@@ -10,4 +10,4 @@ echo "Starting Tacplus..."
 /etc/init.d/tac_plus start
 
 #Extra line added in the script to run all command line arguments
-exec "$@";
+#exec "$@";
