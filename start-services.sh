@@ -7,7 +7,8 @@ echo "Starting SSH Server..."
 echo "Starting Local Rsyslog"
 /etc/init.d/rsyslog start
 echo "Starting Tacplus..."
-/etc/init.d/tac_plus start
+#/etc/init.d/tac_plus start
+
 
 #Extra line added in the script to run all command line arguments
 #exec "$@";
