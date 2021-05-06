@@ -697,7 +697,7 @@ def main():
             if match_it(this_group, "device_deny", device, config, filename):
                 if this_group == groups[-1]:
                     log.info("User '%s' denied access to device '%s' in '%s'->'%s'"
-                             % (user_name, device, this_group, "device_deny"))
+                             % (user_name, ip_addr, this_group, "device_deny"))
                     sys.exit(1)
                 else:
                     continue
@@ -706,7 +706,7 @@ def main():
             if not match_it(this_group, "device_permit", device, config, filename):
                 if this_group == groups[-1]:
                     log.info("User '%s' not allowed access to device '%s' in '%s'->'%s'"
-                             % (user_name, device, this_group, "device_permit"))
+                             % (user_name, ip_addr, this_group, "device_permit"))
                     sys.exit(1)
                 else:
                     continue
@@ -781,7 +781,7 @@ def main():
             if len(splt) > 1:
                 if not splt[1].strip() == 'shell':
                     log.info("User '%s' granted non-shell access to device '%s' in group '%s' from '%s'"
-                             % (user_name, device, this_group, ip_addr))
+                             % (user_name, ip_addr, this_group, ip_addr))
                     return_pairs = av_pairs[2:] # Cut the first two?
 
                     # DEBUG
@@ -808,7 +808,7 @@ def main():
                 print(item.strip('\n'))
 
             log.info("User '%s' granted access to device '%s' in group '%s' from '%s'"
-                     % (user_name, device, this_group, ip_addr))
+                     % (user_name, ip_addr, this_group, ip_addr))
             # DEBUG
             log.debug("Exiting status %s" % exit_val)
             sys.exit(int(exit_val))
@@ -819,7 +819,7 @@ def main():
 
                 if this_group == groups[-1]:
                     log.info("User '%s' denied command '%s' to device '%s' in '%s'->'%s'"
-                             % (user_name, the_command, device, this_group, "command_deny"))
+                             % (user_name, the_command, ip_addr, this_group, "command_deny"))
                     sys.exit(1)
 
                 else:
@@ -827,7 +827,7 @@ def main():
 
             elif match_it(this_group, "command_permit", the_command, config, filename):
                 log.info("User '%s' allowed command '%s' to device '%s' in '%s'->'%s'"
-                         % (user_name, the_command, device, this_group, "command_permit"))
+                         % (user_name, the_command, ip_addr, this_group, "command_permit"))
                 sys.exit(0)
 
             # Exit & log if last group
@@ -835,7 +835,7 @@ def main():
 
                 if this_group == groups[-1]:
                     log.info("User '%s' not allowed command '%s' to device '%s' in any group"
-                             % (user_name, the_command, device))
+                             % (user_name, the_command, ip_addr))
 
                     #Hum... This only works if it's the last group/only group.
                     sys.exit(1)
