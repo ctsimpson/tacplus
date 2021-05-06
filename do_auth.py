@@ -462,7 +462,7 @@ def parse_args(argv=None):
     parser = DoAuthOptionParser(usage=usage, description=desc, version=ver)
     parser.add_option('-u', '--username', metavar='<username>',
                       help='(Mandatory) Username. [$user]')
-    parser.add_option('-i', '--ip-addr', metavar='<ip-addr>',
+    parser.add_option('-i', '--ip_addr', metavar='<ip-addr>',
                       help="""(Optional) IP address of user. If not specified, all host_ entries are ignored and can be omitted. [$address] (Note: If you use IOS-XR, you MUST add '-fix_crs_bug' after $address due to a bug in IOS-XR)""")
     parser.add_option('-d', '--device', metavar='<device>',
                       help="""(Optional) Device address. If not specified, all device_ entries are ignored and can be omitted. [$name]""")

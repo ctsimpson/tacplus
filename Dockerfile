@@ -29,4 +29,4 @@ LABEL release_notes="LAB TACACS"
 EXPOSE 49/tcp 
 EXPOSE 22/tcp
 RUN /start-services.sh
-ENTRYPOINT ["/usr/local/sbin/tac_plus", "-i", "-C", "/etc/tac_plus.conf", "-G", "-d", "2"]
+ENTRYPOINT ["/usr/local/sbin/tac_plus", "-C", "/etc/tac_plus.conf", "-G", "-d", "2"]
